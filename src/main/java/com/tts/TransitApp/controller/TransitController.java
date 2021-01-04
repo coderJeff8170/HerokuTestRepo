@@ -28,6 +28,7 @@ public class TransitController {
 	@PostMapping("/buses")
 	public String getNearbyBuses(BusRequest request, Model model) {
 		List<Bus> buses = apiService.getNearbyBuses(request);
+		
 		Location personLocation = apiService.getPersonLocation(request);
 		model.addAttribute("buses", buses);
 		model.addAttribute("request", request);
